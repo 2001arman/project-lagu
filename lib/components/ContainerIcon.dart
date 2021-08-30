@@ -24,10 +24,14 @@ class _ContainerIconState extends State<ContainerIcon> {
     if (widget.dataActive[index] == true) {
       widget.dataActive[index] = false;
       laguActive.remove(widget.gambar[index]);
+      valueVolume.remove(widget.gambar[index]);
     } else {
       widget.dataActive[index] = true;
       laguActive.add(widget.gambar[index]);
+      // laguActive[widget.gambar[index]] = 20;
+      valueVolume[widget.gambar[index]] = 20.0;
     }
+    print(valueVolume);
     setState(() {});
   }
 

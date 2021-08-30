@@ -53,3 +53,5 @@ List<bool> dataPageTiga = [
 ];
 
 List<String> laguActive = [];
+
+var valueVolume = {};
