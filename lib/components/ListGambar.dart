@@ -55,3 +55,8 @@ List<bool> dataPageTiga = [
 List<String> laguActive = [];
 
 var valueVolume = {};
+
+List<String> assetLagu = [
+  "assets/music/GentleRain.mp3",
+  "assets/music/ocean_sound.mp3",
+];

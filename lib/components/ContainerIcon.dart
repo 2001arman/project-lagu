@@ -1,5 +1,7 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:project_lagu/components/ListGambar.dart';
 
 class ContainerIcon extends StatefulWidget {
@@ -20,20 +22,33 @@ class ContainerIcon extends StatefulWidget {
 }
 
 class _ContainerIconState extends State<ContainerIcon> {
+  AudioPlayer audioPlayer = AudioPlayer();
+
   _onIconClick(int index) {
     if (widget.dataActive[index] == true) {
       widget.dataActive[index] = false;
       laguActive.remove(widget.gambar[index]);
       valueVolume.remove(widget.gambar[index]);
+      audioPlayer.stop();
     } else {
       widget.dataActive[index] = true;
       laguActive.add(widget.gambar[index]);
       // laguActive[widget.gambar[index]] = 20;
       valueVolume[widget.gambar[index]] = 20.0;
+      // try {
+      //   play(index);
+      // } catch (e) {
+      //   print(e.toString());
+      // }
     }
     print(valueVolume);
     setState(() {});
   }
+
+  // Future play(int index) async {
+  //   print(assetLagu[index]);
+  //   await audioPlayer.play(assetLagu[index].toString(), isLocal: true);
+  // }
 
   @override
   Widget build(BuildContext context) {

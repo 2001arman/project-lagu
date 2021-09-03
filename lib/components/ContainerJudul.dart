@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class ContainerJudul extends StatelessWidget {
   const ContainerJudul({
@@ -33,7 +32,7 @@ class ContainerJudul extends StatelessWidget {
       child: Center(
         child: Text(
           text,
-          style: GoogleFonts.roboto(
+          style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,
             color: warna,

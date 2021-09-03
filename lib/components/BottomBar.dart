@@ -25,7 +25,9 @@ class BottomBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          ContainerButton(gambar: "assets/play.svg"),
+          if (laguActive.isNotEmpty)
+            ContainerButton(gambar: "assets/alarm.svg"),
+          if (laguActive.isEmpty) ContainerButton(gambar: "assets/play.svg"),
           ContainerButton(gambar: "assets/alarm.svg"),
           InkWell(
             onTap: () {

@@ -17,7 +17,7 @@ class _VolumeState extends State<Volume> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 190,
+      width: 240,
       child: Slider(
           activeColor: Colors.red,
           inactiveColor: Colors.grey[300],

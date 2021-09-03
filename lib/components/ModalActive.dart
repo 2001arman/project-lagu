@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:project_lagu/components/BottomActive.dart';
 import 'package:project_lagu/components/ContainerButton.dart';
 import 'package:project_lagu/components/ListGambar.dart';
@@ -47,7 +46,6 @@ class _ModalActiveState extends State<ModalActive> {
                     children: [
                       ContainerButton(gambar: laguActive[index]),
                       Volume(index: index),
-                      ContainerButton(gambar: "assets/trash.svg"),
                     ],
                   ),
                 );

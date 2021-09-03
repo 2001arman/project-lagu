@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:project_lagu/components/BottomBar.dart';
-import 'package:project_lagu/components/ContainerButton.dart';
-import 'package:project_lagu/components/ContainerIcon.dart';
-import 'package:project_lagu/components/ContainerJudul.dart';
 import 'package:project_lagu/components/DotIndicator.dart';
-import 'package:project_lagu/pages/PageDua.dart';
-import 'package:project_lagu/pages/PageSatu.dart';
-import 'package:project_lagu/pages/PageTiga.dart';
+import 'package:project_lagu/components/ListGambar.dart';
+
+import 'package:project_lagu/pages/Pages.dart';
+
+import 'package:project_lagu/pages/constan.dart';
 
 class PageUtama extends StatefulWidget {
   const PageUtama({Key? key}) : super(key: key);
@@ -32,13 +29,13 @@ class _PageUtamaState extends State<PageUtama> {
     setState(() {
       _pageSekarang = index;
       if (index == 0) {
-        bgColor = Color.fromRGBO(149, 237, 249, 1);
+        bgColor = bgColorSatu;
       }
       if (index == 1) {
-        bgColor = Color.fromRGBO(191, 162, 219, 1);
+        bgColor = bgColorDua;
       }
       if (index == 2) {
-        bgColor = Color.fromRGBO(30, 174, 152, 1);
+        bgColor = bgColorTiga;
       }
     });
   }
@@ -60,9 +57,27 @@ class _PageUtamaState extends State<PageUtama> {
                     onPageChanged: _onPageChange,
                     controller: _pageController,
                     children: [
-                      PageSatu(),
-                      PageDua(),
-                      PageTiga(),
+                      Pages(
+                        activeIcon: activeIconSatu,
+                        judulColor: judulColorSatu,
+                        nonActiveIcon: nonActiveIconSatu,
+                        gambar: gambarPageSatu,
+                        dataActive: dataPageSatu,
+                      ),
+                      Pages(
+                        activeIcon: activeIconDua,
+                        judulColor: judulColorDua,
+                        nonActiveIcon: nonActiveIconDua,
+                        gambar: gambarPageDua,
+                        dataActive: dataPageDua,
+                      ),
+                      Pages(
+                        activeIcon: activeIconTiga,
+                        judulColor: judulColorTiga,
+                        nonActiveIcon: nonActiveIconTiga,
+                        gambar: gambarPageTiga,
+                        dataActive: dataPageTiga,
+                      ),
                     ],
                   ),
                 ),
